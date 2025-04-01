@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -37,6 +37,11 @@ export default function HomeScreen() {
           Nie czekaj, tylko rozwijaj się już tu i teraz.
         </ThemedText>
       </ThemedView>
+      <TouchableOpacity style={styles.button}>
+        <ThemedText style={styles.buttonText}>
+          Przejdź do logowania
+        </ThemedText>
+      </TouchableOpacity>
     </ParallaxScrollView>
   );
 }
@@ -58,4 +63,15 @@ const styles = StyleSheet.create({
     left: '10%',
     position: 'absolute',
   },
+  button: {
+    alignSelf: 'center',
+    paddingHorizontal: 24,
+    paddingVertical: 16,
+    backgroundColor: '#14A341',
+    borderRadius: 24,
+  },
+  buttonText: {
+    fontWeight: '700',
+    fontSize: 16,
+  }
 });

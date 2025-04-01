@@ -1,4 +1,4 @@
-import { Image, StyleSheet } from 'react-native';
+import { Image, StyleSheet, Platform } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -15,9 +15,13 @@ export default function HomeScreen() {
           style={styles.logo}
         />
       }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Witaj w HabitHero!</ThemedText>
-        <HelloWave />
+      <ThemedView style={styles.profileWrapper}>
+        <ThemedView style={styles.profileCircle}>
+
+        </ThemedView>
+        <ThemedText style={styles.profileName}>
+          Nazwa użytkownika
+        </ThemedText>
       </ThemedView>
       
     </ParallaxScrollView>
@@ -35,10 +39,26 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   logo: {
-    height: 122.4,
-    width: 144,
+    height: 0,
+    width: 0,
     bottom: '10%',
     left: '10%',
     position: 'absolute',
+  },
+  profileWrapper: {
+    flexDirection: 'row',
+  },
+  profileCircle: {
+    borderRadius: 100,
+    backgroundColor: 'white',
+    width: 120,
+    height: 120,
+    marginRight: 32,
+  },
+  profileName: {
+    justifyContent: 'center',
+    alignSelf: 'center',
+    fontSize: 20,
+    fontWeight: '600',
   },
 });
